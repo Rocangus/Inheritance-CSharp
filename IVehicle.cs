@@ -4,6 +4,6 @@
     {
         string RegNo { get; set; }
 
-        void Drive();
+        string Drive();
     }
 }

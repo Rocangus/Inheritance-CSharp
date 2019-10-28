@@ -6,12 +6,27 @@ namespace Inheritance_in_CSharp
 {
     class Vehicle : IVehicle
     {
+        public Vehicle(string regNo)
+        {
+            RegNo = regNo;
+        }
         public string RegNo { get; set; }
 
-        public void Drive()
+        public virtual string Drive()
         {
-            Console.WriteLine("Vehicle starts driving.");
+            return "Vehicle starts driving";
+        }
+    }
 
+    class Bicycle : Vehicle
+    {
+        public Bicycle (string frameNumber) : base(frameNumber)
+        {
+
+        }
+        public override string Drive()
+        {
+            return base.Drive() + ", bicycle starts pedaling."; 
         }
     }
 }
